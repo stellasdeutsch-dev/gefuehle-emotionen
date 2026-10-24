@@ -459,6 +459,14 @@ b{font-weight:800}
 .stat span{font-size:13px;line-height:1.35;font-weight:600}
 .stat.s0{background:var(--soft)} .stat.s1{background:var(--green);color:#fff} .stat.s2{background:var(--beige)} .stat.s3{background:var(--dark);color:#fff}
 @media (min-width:860px){.stats{grid-template-columns:repeat(4,1fr)}}
+.nshots{display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:18px;padding-bottom:10px;overscroll-behavior-x:contain;scrollbar-width:thin}
+.nshots>figure{margin:0;scroll-snap-align:start;min-width:0}
+.nshots .in{padding:8px;display:flex;flex-direction:column;gap:10px}
+.nshots img{width:100%;aspect-ratio:1400/900;object-fit:cover;object-position:top left;border-radius:12px;display:block;background:var(--soft)}
+.nshots figcaption{padding:0 6px 6px;display:flex;flex-direction:column;gap:4px}
+.nshots figcaption b{font:800 14px/1.2 var(--head);color:var(--dark)}
+.nshots figcaption span{font-size:13px;color:var(--mute);line-height:1.4}
+@media (min-width:860px){.nshots{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);grid-auto-columns:auto;overflow:visible}}
 .revs{display:grid;gap:10px;margin-top:18px}
 .revs .in{padding:8px}
 .revs img{border-radius:14px;width:100%}
@@ -966,6 +974,18 @@ html:not(.gs) .rv:not(.in){translate:0 26px}
       <div class="stat s1 rv"><b class="count" data-to="2500">2500+</b><span>слов с озвучкой</span></div>
       <div class="stat s2 rv"><b class="count" data-to="46">46</b><span>ситуаций из жизни</span></div>
       <div class="stat s3 rv"><b class="count" data-to="100">100+</b><span>студентов разговорных клубов</span></div>
+    </div>
+
+    <h2 class="gh" style="margin-top:44px">вот как это <span class="dk">выглядит в Notion</span></h2>
+    <p class="lede">Скриншоты платформы. Листай вправо.</p>
+    <div class="nshots">
+      <figure class="nest rv"><div class="in"><img src="media/n-b1-home.webp" alt="Notion: Главная B1–C1" loading="lazy"><figcaption><b>Главная B1–C1</b><span>Навигация, таймер фокуса, заметки. Фильмы, ютуб, подкасты и книги для уровня B1+.</span></figcaption></div></figure>
+      <figure class="nest rv"><div class="in"><img src="media/n-b1-lexik.webp" alt="Notion: Лексика B1–C1" loading="lazy"><figcaption><b>Лексика B1–C1</b><span>Темы для экзамена и жизни: быт, здоровье, лекарства, повседневная рутина.</span></figcaption></div></figure>
+      <figure class="nest rv"><div class="in"><img src="media/n-b1-topics.webp" alt="Notion: Темы карточками" loading="lazy"><figcaption><b>Темы карточками</b><span>Спорт, отпуск, города, путешествия. Открыл карточку, внутри слова и текст.</span></figcaption></div></figure>
+      <figure class="nest rv"><div class="in"><img src="media/n-b1-materials.webp" alt="Notion: Больше материалов" loading="lazy"><figcaption><b>Больше материалов</b><span>Слова, тексты, диалоги и аудирование к экзамену B1. Всё по колонкам.</span></figcaption></div></figure>
+      <figure class="nest rv"><div class="in"><img src="media/n-b1-srs.webp" alt="Notion: Повторение слов" loading="lazy"><figcaption><b>Повторение слов</b><span>Интервальные карточки от A1 до C1. Скрыл перевод, вспомнил, отметил.</span></figcaption></div></figure>
+      <figure class="nest rv"><div class="in"><img src="media/n-a0-habits.webp" alt="Notion: Трекеры привычек" loading="lazy"><figcaption><b>Трекеры привычек</b><span>Чтение, слушание, разговор, письмо. Пропущенный день видно сразу.</span></figcaption></div></figure>
+      <figure class="nest rv"><div class="in"><img src="media/n-b1-calendar.webp" alt="Notion: Календарь" loading="lazy"><figcaption><b>Календарь</b><span>Планируешь неделю учёбы прямо в Notion. Рядом ссылки на соцсети канала.</span></figcaption></div></figure>
     </div>
 
     <h2 class="gh" style="margin-top:44px">отзывы</h2>
