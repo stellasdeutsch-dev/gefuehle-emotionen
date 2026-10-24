@@ -951,7 +951,7 @@ function gefuehleInit(){
   function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); }
   var SPK = '<svg><use href="#spk"/></svg>';
-  function img(n){ return 'media/' + n + '.webp'; }
+  function img(n){ return '../media/' + n + '.webp'; }
 
   /* ---------- speech ---------- */
   var tts = 'speechSynthesis' in window, deVoice = null;
