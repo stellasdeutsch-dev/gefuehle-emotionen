@@ -497,6 +497,74 @@ b{font-weight:800}
 footer{padding:20px 16px 100px;text-align:center;color:var(--mute);font-size:12.5px}
 footer a{color:var(--green-d)}
 
+/* ---------- particles ---------- */
+.fx{position:absolute;inset:0;pointer-events:none;z-index:4;overflow:visible}
+.pt{position:absolute;left:0;top:0;display:block;will-change:transform,opacity}
+.pt-z{font:800 22px/1 var(--head);color:var(--dark)}
+.pt-heart img,.pt-img img{width:26px;height:26px}
+.pt-puff{width:22px;height:22px;border-radius:50%;background:#BFC2BA;box-shadow:8px 4px 0 -3px #CDD0C8,-7px 5px 0 -4px #CDD0C8}
+.pt-drop{width:11px;height:15px;background:#7CC8F2;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;rotate:180deg}
+.pt-spark{font:800 18px/1 var(--head);color:var(--beige-d)}
+
+/* ---------- marquee bands ---------- */
+.band{position:relative;margin:26px -20px;padding:14px 0;background:var(--dark);color:#fff;rotate:-2deg;overflow:hidden;white-space:nowrap;z-index:2}
+.band.be{background:var(--beige);color:var(--dark);rotate:1.6deg}
+.band .track{display:inline-flex;align-items:center;gap:18px;font:800 clamp(20px,5.6vw,34px)/1 var(--head);padding-right:18px;animation:mq 26s linear infinite}
+.band.be .track{animation-direction:reverse}
+.band .track img{width:clamp(28px,7vw,42px);height:auto}
+.band .track i{font-style:normal;color:var(--green)}
+.band.be .track i{color:#fff}
+html.gs .band .track{animation:none}
+@keyframes mq{to{translate:-50% 0}}
+@media (prefers-reduced-motion: reduce){.band .track{animation:none}}
+
+/* ---------- cover orbit ---------- */
+.orbit{position:absolute;left:50%;top:44%;width:min(300px,82%);aspect-ratio:1;translate:-50% -50%;z-index:1;pointer-events:none}
+.orbit img{position:absolute;width:44px;height:44px;left:50%;top:50%;margin:-22px 0 0 -22px}
+.orbit .ring{position:absolute;inset:6%;border-radius:50%;border:2px dashed rgba(255,255,255,.7)}
+
+/* ---------- story thread ---------- */
+.story{position:relative}
+.story>.st{position:relative;z-index:1}
+.sline{position:absolute;left:42px;top:20px;bottom:20px;width:3px;z-index:0;background:repeating-linear-gradient(var(--beige) 0 8px,transparent 8px 15px);transform-origin:50% 0}
+@media (min-width:860px){.sline{left:50%}}
+
+/* ---------- gauge ---------- */
+.gauge-wrap{display:flex;align-items:center;justify-content:center;gap:16px;margin:20px auto 0;padding:14px 16px;border-radius:22px;background:var(--soft);max-width:420px}
+.gauge{width:min(190px,52vw);height:auto;overflow:visible}
+.gauge .needle{transform-origin:100px 100px;transform-box:view-box}
+.gauge-l b{display:block;font:800 40px/1 var(--head);color:var(--green)}
+.gauge-l span{display:block;font:700 12px/1.3 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:4px}
+.gauge-l small{display:block;font-size:12.5px;color:var(--ink-2);margin-top:6px;max-width:130px;line-height:1.35}
+
+/* ---------- mood stage (02) ---------- */
+.stage2{position:relative;height:210px;padding-bottom:18px;border-radius:18px;margin-bottom:12px;background:radial-gradient(circle at 50% 82%,#fff 0 26%,var(--green-l) 27% 100%);display:grid;place-items:end center;overflow:hidden}
+.stage2 img.big{width:96px;height:96px;filter:drop-shadow(0 14px 16px rgba(30,80,60,.3))}
+.stage2 .lvtag{position:absolute;left:12px;top:12px;font:800 12px/1 var(--head);letter-spacing:.14em;background:var(--dark);color:#fff;padding:7px 9px;border-radius:9px}
+.lvl-range{-webkit-appearance:none;appearance:none;width:100%;height:12px;border-radius:999px;margin:4px 0 14px;background:linear-gradient(90deg,#fff 0 25%,var(--beige) 25% 50%,var(--green) 50% 75%,var(--dark) 75%);box-shadow:inset 0 0 0 1.5px var(--line)}
+.lvl-range::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:10px;background:#fff;border:3px solid var(--green-d);box-shadow:0 4px 0 var(--green-d);cursor:grab}
+.lvl-range::-moz-range-thumb{width:26px;height:26px;border-radius:10px;background:#fff;border:3px solid var(--green-d);box-shadow:0 4px 0 var(--green-d);cursor:grab}
+
+/* ---------- Ich bin / Mir ist diagram (03) ---------- */
+.who{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.who-p{position:relative;border-radius:22px;padding:14px 10px 12px;min-height:250px;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+.who-p.a{background:var(--soft)}
+.who-p.b{background:var(--green-l)}
+.who-p .ttl{font:800 clamp(16px,4.4vw,22px)/1 var(--head);color:var(--dark)}
+.who-p.b .ttl{color:var(--green-d)}
+.who-av{position:relative;margin-top:auto;width:96px;height:96px}
+.who-av img{width:96px;height:96px}
+.who-tag{position:absolute;left:50%;top:58%;translate:-50% 0;background:var(--beige);color:var(--dark);font:800 12px/1 var(--head);padding:7px 9px;border-radius:8px;white-space:nowrap;box-shadow:0 4px 0 var(--beige-d);z-index:2}
+.who-src{position:absolute;right:8px;top:44px;width:46px;height:46px}
+.who-waves{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.who-waves path{fill:none;stroke:var(--green);stroke-width:3;stroke-linecap:round;stroke-dasharray:6 10;animation:wv 1.1s linear infinite}
+.who-waves path:nth-child(2){animation-delay:-.35s;opacity:.7}
+.who-waves path:nth-child(3){animation-delay:-.7s;opacity:.45}
+@keyframes wv{to{stroke-dashoffset:-32}}
+@media (prefers-reduced-motion: reduce){.who-waves path{animation:none}}
+.who-mir{position:absolute;left:10px;top:92px;background:var(--green);color:#fff;font:800 13px/1 var(--head);padding:6px 9px;border-radius:9px;box-shadow:0 3px 0 var(--green-d);z-index:2}
+.who-cap{font-size:12.5px;line-height:1.35;color:var(--ink-2);text-align:center;margin:10px 0 0}
+
 html:not(.gs) .rv{transition:translate .8s cubic-bezier(.2,.8,.2,1)}
 html:not(.gs) .rv:not(.in){translate:0 26px}
 @media (prefers-reduced-motion: reduce){html:not(.gs) .rv:not(.in){translate:none}}
@@ -591,7 +659,9 @@ html:not(.gs) .rv:not(.in){translate:0 26px}
       <div class="cv-art" id="cvArt">
         <div class="cv-tabs" id="cvTabs"><span class="on">müde</span><span>froh</span><span>wütend</span><span>nervös</span></div>
         <div class="cv-meter" id="cvMeter"><i class="on"></i><i></i><i></i><i></i></div>
+        <div class="orbit" id="orbit" aria-hidden="true"><span class="ring"></span><img src="../media/x-heart.webp" alt=""><img src="../media/x-zap.webp" alt=""><img src="../media/x-cloud.webp" alt=""><img src="../media/x-fire.webp" alt=""></div>
         <img class="bigemo" id="cvEmo" src="../media/x-yawn.webp" alt="">
+        <div class="fx" id="cvFx"></div>
         <div class="cv-chip"><button class="say" type="button" id="cvSay" data-say="Ich bin müde." aria-label="Послушать"><svg><use href="#spk"/></svg></button><div><b id="cvDe">Ich bin müde.</b><small id="cvRu">Я устал.</small></div></div>
       </div>
     </div>
@@ -601,6 +671,8 @@ html:not(.gs) .rv:not(.in){translate:0 26px}
     </div>
   </div>
 </section>
+
+<div class="band" aria-hidden="true"><div class="track">müde <img src="../media/x-yawn.webp" alt=""> froh <img src="../media/x-grin.webp" alt=""> <i>wütend</i> <img src="../media/x-steam.webp" alt=""> nervös <img src="../media/x-anxious.webp" alt=""> verliebt <img src="../media/x-hearteyes.webp" alt=""> <i>gestresst</i> <img src="../media/x-sweat.webp" alt=""> müde <img src="../media/x-yawn.webp" alt=""> froh <img src="../media/x-grin.webp" alt=""> <i>wütend</i> <img src="../media/x-steam.webp" alt=""> nervös <img src="../media/x-anxious.webp" alt=""> verliebt <img src="../media/x-hearteyes.webp" alt=""> <i>gestresst</i> <img src="../media/x-sweat.webp" alt=""></div></div>
 
 <!-- INTRO + CONTENTS -->
 <section class="page" id="intro">
@@ -635,7 +707,8 @@ html:not(.gs) .rv:not(.in){translate:0 26px}
   <div class="sheet">
     <p class="caps">История</p>
     <h2 class="gh" style="margin-top:8px">ich bin <span class="dk">langweilig</span></h2>
-    <div class="story">
+    <div class="story" id="storyBox">
+      <span class="sline" id="sLine" aria-hidden="true"></span>
       <div class="st nest rv"><div class="in"><img src="../media/x-party.webp" alt=""><p><time>ПЯТНИЦА · 19:04</time>Корпоратив. Вена. Все стоят с бокалами и говорят про погоду.</p></div></div>
       <div class="st nest rv"><div class="in"><img src="../media/x-smiling.webp" alt=""><p><time>19:12</time>Подходит коллега Юлия. Спрашивает: <span class="de">Und, wie geht's?</span></p></div></div>
       <div class="st nest rv"><div class="in"><img src="../media/x-bored.webp" alt=""><p><time>19:12</time>Мне скучно. Хочу сказать честно. Говорю: <span class="de b">Ich bin langweilig.</span></p></div></div>
@@ -670,6 +743,16 @@ html:not(.gs) .rv:not(.in){translate:0 26px}
       </div>
       <p class="spec-ru" id="specRu">Я устал. Самая честная фраза в пятницу.</p>
     </div>
+    <div class="gauge-wrap" id="gaugeWrap">
+      <svg class="gauge" viewBox="0 0 200 118" aria-hidden="true">
+        <path d="M20 100 A80 80 0 0 1 43.4 43.4" stroke="#E2E2DD" stroke-width="18" fill="none"/>
+        <path d="M45.4 41.6 A80 80 0 0 1 98.6 20" stroke="#ECCA9F" stroke-width="18" fill="none"/>
+        <path d="M101.4 20 A80 80 0 0 1 154.6 41.6" stroke="#6AAE95" stroke-width="18" fill="none"/>
+        <path d="M156.6 43.4 A80 80 0 0 1 180 100" stroke="#353535" stroke-width="18" fill="none"/>
+        <g class="needle" id="needle"><path d="M100 100 L100 34" stroke="#353535" stroke-width="5" stroke-linecap="round"/><circle cx="100" cy="100" r="11" fill="#353535"/><circle cx="100" cy="100" r="4" fill="#fff"/></g>
+      </svg>
+      <div class="gauge-l"><b id="gaugeV">01</b><span id="gaugeT">тихо</span><small id="gaugeS">Сила фразы. Жми на вариации ниже.</small></div>
+    </div>
     <h2 class="gh" style="margin-top:34px">вариации <span class="dk">эмоции</span></h2>
     <p class="lede">Шесть способов сказать одно и то же. Точки показывают силу. Жми на карточку, чтобы послушать.</p>
     <div class="var" id="varGrid"></div>
@@ -695,6 +778,8 @@ html:not(.gs) .rv:not(.in){translate:0 26px}
       </div>
       <div class="nest gam-box"><div class="in">
         <div class="pills ctr" id="gamTabs" style="margin-bottom:12px"></div>
+        <div class="stage2" id="stage2"><span class="lvtag" id="st2Tag">01 · ТИХО</span><img class="big" id="st2Emo" src="../media/x-bored.webp" alt=""><div class="fx" id="st2Fx"></div></div>
+        <input class="lvl-range" id="lvlRange" type="range" min="0" max="3" step="1" value="0" aria-label="Громкость эмоции">
         <div class="bars" id="bars"></div>
         <div class="hexes" id="hexes"></div>
         <div class="gam-out"><button class="say" type="button" id="gamSay" aria-label="Послушать"><svg><use href="#spk"/></svg></button><p><span class="de" id="gamDe"></span><span id="gamRu"></span></p></div>
@@ -703,6 +788,8 @@ html:not(.gs) .rv:not(.in){translate:0 26px}
     <div class="pfoot"><nav class="pnav"><a href="#ch1">01.</a><a class="on" href="#ch2">02.</a><a href="#ch3">03.</a><a href="#ch4">04.</a></nav><span class="mk">ST</span></div>
   </div>
 </section>
+
+<div class="band be" aria-hidden="true"><div class="track">Ich bin <i>müde</i> <img src="../media/x-sleep.webp" alt=""> Mir ist <i>kalt</i> <img src="../media/x-cold.webp" alt=""> Das <i>nervt</i> <img src="../media/x-symbols.webp" alt=""> Ich freue <i>mich</i> <img src="../media/x-party.webp" alt=""> Ich bin <i>müde</i> <img src="../media/x-sleep.webp" alt=""> Mir ist <i>kalt</i> <img src="../media/x-cold.webp" alt=""> Das <i>nervt</i> <img src="../media/x-symbols.webp" alt=""> Ich freue <i>mich</i> <img src="../media/x-party.webp" alt=""></div></div>
 
 <!-- 03 PAIR -->
 <section class="page" id="ch3">
@@ -714,6 +801,22 @@ html:not(.gs) .rv:not(.in){translate:0 26px}
       <div class="pcol"><div class="big">Ich bin</div><div class="dim"></div><p class="caps gr">Nominativ · кто я</p><div class="nm">müde · froh · nervös</div></div>
       <div class="pcol"><div class="big gr">Mir ist</div><div class="dim"></div><p class="caps gr">Dativ · что со мной</p><div class="nm">kalt · heiß · langweilig</div></div>
     </div></div>
+    <div class="who" id="who">
+      <div class="who-p a">
+        <span class="ttl">Ich bin</span>
+        <span class="who-tag" id="whoTag">langweilig</span>
+        <div class="who-av"><img id="whoA" src="../media/x-bored.webp" alt=""></div>
+        <p class="who-cap">Ярлык приклеен <b>на тебя</b>. Ты такой человек.</p>
+      </div>
+      <div class="who-p b">
+        <span class="ttl">Mir ist</span>
+        <img class="who-src" id="whoSrc" src="../media/x-cloud.webp" alt="">
+        <svg class="who-waves" viewBox="0 0 160 250" preserveAspectRatio="none" aria-hidden="true"><path d="M128 78 C 110 100, 120 130, 92 150"/><path d="M138 92 C 126 120, 132 150, 100 168"/><path d="M118 70 C 96 92, 104 122, 82 140"/></svg>
+        <span class="who-mir">mir</span>
+        <div class="who-av"><img id="whoB" src="../media/x-yawn.webp" alt=""></div>
+        <p class="who-cap">Ощущение приходит <b>к тебе</b>. Тебе (mir) скучно.</p>
+      </div>
+    </div>
     <div class="pmach" id="pmach">
       <div class="pm">
         <div class="pm-card bad"><span class="tag lab" style="background:#E06A50;color:#fff">мимо</span><img id="pmBadImg" src="../media/x-bored.webp" alt=""><span class="ph" id="pmBad">Ich bin langweilig.</span><span class="ru" id="pmBadRu">Я скучный человек.</span></div>
@@ -747,7 +850,7 @@ html:not(.gs) .rv:not(.in){translate:0 26px}
   <div class="sheet">
     <h2 class="gh">вариации <span class="dk">реакций</span></h2>
     <p class="lede">Ситуация из жизни. Три кнопки. Одна точно в цель, одна мимо, одна «ну, можно, но…».</p>
-    <div class="react" id="react">
+    <div class="react" id="react" style="position:relative"><div class="fx" id="reactFx"></div>
       <div class="nest rq"><div class="in"><div class="who"><img id="rqImg" src="../media/x-grin.webp" alt=""><span id="rqWho">Подруга</span></div><p class="q" id="rqQ"></p></div></div>
       <div>
         <div class="ropts" id="rOpts"></div>
@@ -866,6 +969,29 @@ function gefuehleInit(){
     new IntersectionObserver(function(es){ es.forEach(function(en){ en.isIntersecting ? on() : (off && off()); }); }, {threshold:th||.3}).observe(el);
   }
 
+  /* ---------- particles ---------- */
+  var KIND = {'müde':'z', 'froh':'heart', 'wütend':'puff', 'nervös':'drop'};
+  function rnd(a, b){ return a + Math.random()*(b-a); }
+  function at(layer, el, fy){ var a = layer.getBoundingClientRect(), b = el.getBoundingClientRect(); return {x:b.left - a.left + b.width/2, y:b.top - a.top + b.height*(fy == null ? .5 : fy)}; }
+  function fx(layer, kind, x, y, o){
+    if(!A || !layer || layer.childElementCount > 40) return;
+    o = o || {};
+    var el = document.createElement('span'), sp = o.spread || 50, up = o.up != null ? o.up : rnd(80, 160), dur = o.dur || 1.4;
+    if(kind === 'drop' && o.up == null) up = -rnd(60, 110);
+    el.className = 'pt pt-' + (kind === 'heart' || kind === 'img' ? 'img' : kind);
+    if(kind === 'z') el.textContent = Math.random() < .5 ? 'z' : 'Z';
+    else if(kind === 'spark') el.textContent = '✦';
+    else if(kind === 'heart') el.innerHTML = '<img src="../media/x-heart.webp" alt="">';
+    else if(kind === 'img') el.innerHTML = '<img src="' + o.src + '" alt="">';
+    layer.appendChild(el);
+    G.set(el, {x:x, y:y, xPercent:-50, yPercent:-50, scale:.2, opacity:0});
+    G.timeline({onComplete:function(){ el.remove(); }})
+      .to(el, {opacity:1, scale:rnd(.6, 1.15), duration:.25, ease:'back.out(3)'})
+      .to(el, {x:x + rnd(-sp, sp), y:y - up, rotation:rnd(-45, 45), duration:dur, ease:'power1.out'}, 0)
+      .to(el, {opacity:0, duration:.45}, dur - .45);
+  }
+  function burst(layer, kind, x, y, n, o){ for(var i=0;i<n;i++) fx(layer, kind, x + rnd(-10,10), y + rnd(-6,6), o); }
+
   /* ---------- data ---------- */
   var EMO = {
     'müde':  {emo:'x-yawn', de:'Ich bin müde.', ru:'Я устал. Самая честная фраза в пятницу.', parts:'Ich · bin · прилагательное', short:'Я устал.',
@@ -887,6 +1013,7 @@ function gefuehleInit(){
   /* ---------- reveal ---------- */
   if(A){
     $$('.gh').forEach(function(h){
+      if(h.closest('.cv-title')) return;
       var t = h;
       if(ST){ try{ t = new SplitText(h, {type:'words', wordsClass:'wd'}).words; }catch(e){} }
       G.from(t, {yPercent:70, rotation:5, transformOrigin:'0% 100%', duration:.8, ease:'back.out(2)', stagger:.05, scrollTrigger:{trigger:h, start:'top 90%', once:true}});
@@ -899,6 +1026,32 @@ function gefuehleInit(){
     G.to('.ghost', {yPercent:24, ease:'none', scrollTrigger:{trigger:'.cover', start:'top top', end:'bottom top', scrub:true}});
     G.to('#prog', {scaleX:1, ease:'none', scrollTrigger:{trigger:'main', start:'top top', end:'bottom bottom', scrub:.3}});
     ScrollTrigger.batch('.stat, .pr, .mock', {start:'top 94%', once:true, onEnter:function(b){ G.from(b, {scale:.9, rotation:function(){ return G.utils.random(-3,3); }, duration:.7, ease:'back.out(2)', stagger:.07}); }});
+    // cover title: letters drop in, year stamps
+    (function(){
+      var h = $('.cv-title .gh'), t = h;
+      if(ST){ try{ t = new SplitText(h, {type:'chars', charsClass:'ch'}).chars; }catch(e){} }
+      G.from(t, {y:-110, rotation:function(){ return G.utils.random(-50,50); }, duration:1.1, ease:'bounce.out', stagger:.045, delay:.15});
+      G.from('.cv-title .yr', {scale:2.6, rotation:-14, opacity:0, duration:.6, ease:'back.out(2.5)', delay:.9});
+    })();
+    // sheets lift in
+    ScrollTrigger.batch($$('.sheet').slice(1), {start:'top 92%', once:true, onEnter:function(b){ G.from(b, {y:70, scale:.96, rotation:.8, duration:1, ease:'power3.out', stagger:.1}); }});
+    // intro art bobs
+    G.to('.intro .art img', {yPercent:-10, duration:1.8, ease:'sine.inOut', yoyo:true, repeat:-1, stagger:.35});
+    // story thread draws with scroll, emojis pop, punch shakes
+    G.fromTo('#sLine', {scaleY:0}, {scaleY:1, ease:'none', scrollTrigger:{trigger:'#storyBox', start:'top 75%', end:'bottom 65%', scrub:.5}});
+    ScrollTrigger.batch('.st img', {start:'top 90%', once:true, onEnter:function(b){ G.from(b, {scale:.2, rotation:-80, duration:.9, ease:'elastic.out(1,.45)', stagger:.12}); }});
+    ScrollTrigger.create({trigger:'.st.punch', start:'top 85%', once:true, onEnter:function(){ G.fromTo('.st.punch', {x:-10}, {x:0, duration:.8, ease:'elastic.out(1.4,.2)', delay:.4}); }});
+    // marquee bands react to scroll speed
+    $$('.band .track').forEach(function(tr){
+      var rev = tr.closest('.band.be'), band = tr.parentNode, base = rev ? 1.6 : -2;
+      var loop = G.fromTo(tr, {xPercent: rev ? -50 : 0}, {xPercent: rev ? 0 : -50, duration:24, ease:'none', repeat:-1});
+      ScrollTrigger.create({trigger:band, start:'top bottom', end:'bottom top', onUpdate:function(self){
+        var v = self.getVelocity();
+        G.to(loop, {timeScale:1 + Math.min(Math.abs(v)/300, 5), duration:.2, overwrite:true});
+        G.to(loop, {timeScale:1, duration:1.2, delay:.25, overwrite:false});
+        G.to(band, {skewX:G.utils.clamp(-8, 8, v/-260), rotation:base, duration:.4, overwrite:true});
+      }});
+    });
     $$('.count').forEach(function(c){
       var to = +c.dataset.to, o = {v:0}, plus = /\+/.test(c.textContent);
       ScrollTrigger.create({trigger:c, start:'top 94%', once:true, onEnter:function(){ G.to(o, {v:to, duration:1.5, ease:'power2.out', onUpdate:function(){ c.textContent = Math.round(o.v) + (plus ? '+' : ''); }}); }});
@@ -926,10 +1079,20 @@ function gefuehleInit(){
           .fromTo(meter, {scaleY:.3}, {scaleY:1, duration:.4, stagger:.05, ease:'back.out(3)'}, '-=.5');
       } else { emo.src = img(s[3]); de.textContent = s[1]; ru.textContent = s[2]; }
     }
-    function loop(){ if(!run) return; k = (k+1) % S.length; show(k, true); t = setTimeout(loop, 2800); }
+    function loop(){ if(!run) return; k = (k+1) % S.length; show(k, true); t = setTimeout(loop, 3200); }
     show(0, false);
-    if(!reduce) whenVisible($('#cvArt'), function(){ if(run) return; run = true; t = setTimeout(loop, 1600); }, function(){ run = false; clearTimeout(t); });
-    if(A) G.to('#cvEmo', {rotation:4, duration:1.6, yoyo:true, repeat:-1, ease:'sine.inOut'});
+    var layer = $('#cvFx'), em = null;
+    function emit(){ var p = at(layer, emo, KIND[S[k][0]] === 'drop' ? .3 : .12); fx(layer, KIND[S[k][0]], p.x + rnd(-50, 50), p.y, {spread:60}); }
+    if(!reduce) whenVisible($('#cvArt'), function(){ if(run) return; run = true; t = setTimeout(loop, 1800); if(A) em = setInterval(emit, 360); }, function(){ run = false; clearTimeout(t); clearInterval(em); });
+    if(A){
+      G.to('#cvEmo', {rotation:4, duration:1.6, yoyo:true, repeat:-1, ease:'sine.inOut'});
+      // satellites orbit the big emoji and stay upright
+      var sats = $$('#orbit img'), R = function(){ return $('#orbit').offsetWidth / 2 - 4; };
+      sats.forEach(function(s, i){ var a = i / sats.length * Math.PI * 2; G.set(s, {x:Math.cos(a) * R(), y:Math.sin(a) * R()}); });
+      G.to('#orbit', {rotation:360, duration:22, ease:'none', repeat:-1});
+      G.to(sats, {rotation:-360, duration:22, ease:'none', repeat:-1});
+      G.to(sats, {scale:1.2, duration:.9, yoyo:true, repeat:-1, ease:'sine.inOut', stagger:.3});
+    }
   })();
 
   /* ---------- story fix ---------- */
@@ -952,13 +1115,27 @@ function gefuehleInit(){
   (function(){
     var tabs = $('#emoTabs'), spec = $('#spec'), cur = 'müde', grid = $('#varGrid');
     tabs.innerHTML = KEYS.map(function(k){ return '<button class="pill" type="button" data-e="'+k+'" aria-pressed="'+(k===cur)+'">'+k+'</button>'; }).join('');
-    var cls = ['', 'c1', 'c2', 'c3', '', 'c2'];
+    var cls = ['', 'c1', 'c2', 'c3', '', 'c2'], ANG = [-67.5, -22.5, 22.5, 67.5], LBL = ['тихо','норм','сильно','max'], needle = $('#needle');
+    function gauge(l, txt, anim){
+      var a = ANG[l-1];
+      $('#gaugeV').textContent = '0' + l; $('#gaugeT').textContent = LBL[l-1]; $('#gaugeS').textContent = txt;
+      if(A && anim){ G.to(needle, {rotation:a, svgOrigin:'100 100', duration:1.3, ease:'elastic.out(1,.32)'}); G.fromTo('#gaugeV', {scale:1.6, rotation:-12}, {scale:1, rotation:0, duration:.6, ease:'back.out(3)'}); }
+      else if(G){ G.set(needle, {rotation:a, svgOrigin:'100 100'}); }
+      else needle.setAttribute('transform', 'rotate(' + a + ' 100 100)');
+    }
+    grid.addEventListener('click', function(ev){
+      var b = ev.target.closest('.vr'); if(!b) return;
+      gauge(+b.dataset.l, b.dataset.say, true);
+      if(A) G.fromTo(b, {scale:.92, rotation:-3}, {scale:1, rotation:0, duration:.6, ease:'elastic.out(1,.4)'});
+    });
     function render(anim){
       var e = EMO[cur];
+      var base = e.v.filter(function(v){ return v[0] === e.de; })[0] || e.v[0];
+      gauge(base[2], e.de, anim);
       $('#specEmo').src = img(e.emo); $('#specDe').textContent = e.de; $('#specSay').dataset.say = e.de; $('#specRu').textContent = e.ru; $('#specParts').textContent = e.parts;
       grid.innerHTML = e.v.map(function(v, i){
         var dots = ''; for(var d=1; d<=4; d++) dots += '<i class="' + (d <= v[2] ? 'on' : '') + '"></i>';
-        return '<button class="vr ' + cls[i] + '" type="button" data-say="' + esc(v[0]) + '"><span class="ph">' + esc(v[0]) + '</span><span class="ru">' + esc(v[1]) + '</span><span class="meta"><span class="lvl">' + dots + '</span><span class="tag">' + v[3] + '</span></span></button>';
+        return '<button class="vr ' + cls[i] + '" type="button" data-l="' + v[2] + '" data-say="' + esc(v[0]) + '"><span class="ph">' + esc(v[0]) + '</span><span class="ru">' + esc(v[1]) + '</span><span class="meta"><span class="lvl">' + dots + '</span><span class="tag">' + v[3] + '</span></span></button>';
       }).join('');
       if(A && anim){
         spec.classList.add('pre'); void spec.offsetWidth;
@@ -986,10 +1163,25 @@ function gefuehleInit(){
       if(A && anim) G.from($$('.bar', bars), {scaleY:.05, duration:.9, ease:'elastic.out(1,.55)', stagger:.1});
       pick(lvl, false);
     }
+    var st2 = $('#stage2'), st2Emo = $('#st2Emo'), st2Fx = $('#st2Fx'), range = $('#lvlRange'), shake = null, em = null, TAG = ['01 · ТИХО','02 · НОРМ','03 · СИЛЬНО','04 · MAX'];
+    range.addEventListener('input', function(){ touched = true; clearInterval(t); pick(+range.value, true); });
+    function stage(anim){
+      var l = EMO[cur].lv[lvl];
+      st2Emo.src = img(l[2]); $('#st2Tag').textContent = TAG[lvl]; range.value = lvl;
+      if(!A) return;
+      if(shake){ shake.kill(); shake = null; G.set(st2Emo, {rotation:0, x:0}); }
+      G.to(st2Emo, {scale:.72 + lvl * .12, duration:.7, ease:'elastic.out(1,.4)'});
+      if(anim) G.fromTo(st2Emo, {y:-40}, {y:0, duration:.7, ease:'bounce.out'});
+      if((cur === 'wütend' || cur === 'nervös') && lvl >= 2) shake = G.to(st2Emo, {x:lvl === 3 ? 4 : 2, rotation:lvl === 3 ? 4 : 2, duration:.06, yoyo:true, repeat:-1, ease:'none'});
+      if(cur === 'froh' && lvl >= 2) shake = G.to(st2Emo, {y:-10, duration:.35, yoyo:true, repeat:-1, ease:'sine.inOut'});
+    }
+    function emit(){ var p = at(st2Fx, st2Emo, KIND[cur] === 'drop' ? .3 : .1); for(var n=0; n<=lvl; n++) fx(st2Fx, KIND[cur], p.x + rnd(-40, 40), p.y - 14, {spread:70, dur:1.2 + lvl*.15}); }
+    if(A) whenVisible(st2, function(){ if(!em) em = setInterval(emit, 520); }, function(){ clearInterval(em); em = null; }, .3);
     function pick(i, anim){
       lvl = i; var l = EMO[cur].lv[i], ph = lvPhrase(l[0]);
       $$('.bar', bars).forEach(function(b, j){ b.classList.toggle('on', j===i); });
       $('#gamDe').textContent = ph; $('#gamRu').textContent = l[1] + '. Громкость 0' + (i+1) + '.'; $('#gamSay').dataset.say = ph;
+      stage(anim);
       if(A && anim){ var b = $$('.bar', bars)[i]; G.fromTo(b, {scaleY:.85}, {scaleY:1, duration:.6, ease:'elastic.out(1,.4)'}); G.fromTo($('img', b), {y:-30, rotation:-30}, {y:0, rotation:0, duration:.7, ease:'bounce.out'}); }
     }
     $$('[data-g]', tabs).forEach(function(b){ b.onclick = function(){ touched = true; clearInterval(t); cur = b.dataset.g; lvl = 0; $$('[data-g]', tabs).forEach(function(x){ x.setAttribute('aria-pressed', x===b); }); build(true); }; });
@@ -1010,6 +1202,19 @@ function gefuehleInit(){
       ['kalt','Ich bin kalt.','Я холодный человек. Бессердечный.','x-neutral','Mir ist kalt.','Мне холодно.','x-cold'],
       ['schlecht','Ich bin schlecht.','Я плохой. Или плохо что-то делаю.','x-expressionless','Mir ist schlecht.','Меня тошнит. Мне плохо.','x-nauseated']
     ];
+    var WHO = {langweilig:['x-sleep','скучно'], 'heiß':['x-fire','жарко'], kalt:['x-cloud','холодно'], schlecht:['x-zap','плохо']};
+    function who(p, anim){
+      var tag = $('#whoTag'), w = WHO[p[0]];
+      tag.textContent = p[0]; $('#whoA').src = img(p[3]); $('#whoB').src = img(p[6]); $('#whoSrc').src = img(w[0]);
+      $('.who-p.b .who-cap').innerHTML = 'Ощущение приходит <b>к тебе</b>. Тебе (mir) ' + w[1] + '.';
+      if(!A || !anim) return;
+      G.timeline()
+        .fromTo(tag, {y:-150, rotation:-50, scale:1.4}, {y:0, rotation:-6, scale:1, duration:.7, ease:'power3.in'})
+        .fromTo('#whoA', {scaleY:.7, scaleX:1.2}, {scaleY:1, scaleX:1, duration:.6, ease:'elastic.out(1,.35)'})
+        .fromTo('#whoSrc', {scale:.3, rotation:-40}, {scale:1, rotation:0, duration:.7, ease:'elastic.out(1,.4)'}, .1)
+        .fromTo('.who-mir', {x:60, scale:.4}, {x:0, scale:1, duration:.6, ease:'back.out(2.5)'}, .4)
+        .fromTo('#whoB', {scale:.8}, {scale:1, duration:.6, ease:'elastic.out(1,.4)'}, .6);
+    }
     var ctl = $('#pmCtl'), k = 0, t = null, touched = false;
     ctl.innerHTML = P.map(function(p, i){ return '<button class="pill" type="button" data-p="' + i + '" aria-pressed="' + (i===0) + '">' + p[0] + '</button>'; }).join('');
     var bad = $('.pm-card.bad'), good = $('.pm-card.good');
@@ -1019,6 +1224,7 @@ function gefuehleInit(){
       $('#pmBad').textContent = p[1]; $('#pmBadRu').textContent = p[2]; $('#pmBadImg').src = img(p[3]);
       $('#pmGood').textContent = p[4]; $('#pmGoodRu').textContent = p[5]; $('#pmGoodImg').src = img(p[6]);
       good.dataset.say = p[4]; bad.dataset.say = p[1];
+      who(p, anim);
       if(A && anim){
         var tl = G.timeline();
         tl.fromTo(bad, {x:-40, rotation:-4, opacity:0}, {x:0, rotation:0, opacity:1, duration:.5, ease:'back.out(2)'})
@@ -1117,7 +1323,11 @@ function gefuehleInit(){
       verd.className = 'rverd ' + o[1];
       verd.innerHTML = '<svg class="ic"><use href="#i-' + ICO[o[1]] + '"/></svg><span><b>' + HEAD[o[1]] + '</b> ' + esc(o[2]) + '</span>';
       say(o[0]);
-      if(A){ G.fromTo(verd, {scale:.94}, {scale:1, duration:.5, ease:'back.out(3)'}); if(o[1]==='no') G.fromTo(b, {x:-8}, {x:0, duration:.5, ease:'elastic.out(1.2,.2)'}); }
+      if(A){
+        G.fromTo(verd, {scale:.94}, {scale:1, duration:.5, ease:'back.out(3)'});
+        if(o[1]==='no'){ G.fromTo(b, {x:-8}, {x:0, duration:.5, ease:'elastic.out(1.2,.2)'}); G.fromTo('.rq', {rotation:-2}, {rotation:0, duration:.7, ease:'elastic.out(1.3,.2)'}); G.fromTo('#rqImg', {rotation:-30}, {rotation:0, duration:.8, ease:'elastic.out(1.2,.25)'}); }
+        else { var L = $('#reactFx'), p = at(L, b, .5); burst(L, o[1]==='ok' ? 'heart' : 'spark', p.x, p.y, o[1]==='ok' ? 8 : 4, {spread:110, up:120}); if(o[1]==='ok') G.fromTo('#rqImg', {scale:1.5, rotation:20}, {scale:1, rotation:0, duration:.8, ease:'elastic.out(1,.35)'}); }
+      }
     }
     $('#rNext').onclick = function(){ i = (i+1) % R.length; draw(true); };
     draw(false);
@@ -1135,7 +1345,9 @@ function gefuehleInit(){
       $$('.icn', box).forEach(function(b, j){ b.classList.toggle('on', j===i); });
       $('#icnDe').textContent = x[0]; $('#icnRu').textContent = x[1] + '. Ich bin ' + x[0] + '.'; $('#icnSay').dataset.say = 'Ich bin ' + x[0] + '.';
     }
-    $$('.icn', box).forEach(function(b){ b.onclick = function(){ var i = +b.dataset.i; pick(i); say('Ich bin ' + I[i][0] + '.'); if(A) G.fromTo($('.tile', b), {scale:.7, rotation:-20}, {scale:1, rotation:0, duration:.6, ease:'elastic.out(1,.4)'}); }; });
+    var IK = {'müde':'z','froh':'heart','glücklich':'heart','verliebt':'heart','dankbar':'heart','erleichtert':'spark','stolz':'spark','überrascht':'spark','wütend':'puff','genervt':'puff','gelangweilt':'z','nervös':'drop','gestresst':'drop','ängstlich':'drop','traurig':'drop','enttäuscht':'drop','einsam':'z','entspannt':'spark'};
+    var iFx = document.createElement('div'); iFx.className = 'fx'; box.style.position = 'relative'; box.appendChild(iFx);
+    $$('.icn', box).forEach(function(b){ b.onclick = function(){ var i = +b.dataset.i; pick(i); say('Ich bin ' + I[i][0] + '.'); if(A){ G.fromTo($('.tile', b), {scale:.7, rotation:-20}, {scale:1, rotation:0, duration:.6, ease:'elastic.out(1,.4)'}); var p = at(iFx, $('.tile', b), .2); burst(iFx, IK[I[i][0]] || 'spark', p.x, p.y, 6, {spread:50, up:IK[I[i][0]] === 'drop' ? -70 : 90, dur:1.1}); } }; });
     pick(0);
     if(A) G.from($$('.icn .tile', box), {scale:.2, rotation:function(){ return G.utils.random(-90,90); }, duration:.7, ease:'back.out(2.4)', stagger:{each:.04, from:'random'}, scrollTrigger:{trigger:box, start:'top 88%', once:true}});
   })();
@@ -1154,7 +1366,12 @@ function gefuehleInit(){
     ];
     var box = $('#idioms');
     box.innerHTML = D.map(function(d){ return '<button class="idm" type="button" aria-label="Перевернуть: ' + esc(d[0]) + '"><span class="fc"><span class="f"><img src="' + img(d[4]) + '" alt=""><span class="ph">' + esc(d[0]) + '</span><small>дословно: ' + esc(d[1]) + '</small></span><span class="b"><span class="mean">' + esc(d[2]) + '</span><p>' + esc(d[3]) + '</p><span class="say" data-say="' + esc(d[3]) + '" role="button" aria-label="Послушать">' + SPK + '</span></span></span></button>'; }).join('');
-    $$('.idm', box).forEach(function(b){ b.addEventListener('click', function(e){ if(e.target.closest('.say')) return; b.classList.toggle('flip'); }); });
+    var dFx = document.createElement('div'); dFx.className = 'fx'; box.style.position = 'relative'; box.appendChild(dFx);
+    $$('.idm', box).forEach(function(b, i){ b.addEventListener('click', function(e){
+      if(e.target.closest('.say')) return;
+      b.classList.toggle('flip');
+      if(A && b.classList.contains('flip')){ var p = at(dFx, b, .35); burst(dFx, 'img', p.x, p.y, 5, {src:img(D[i][4]), spread:80, up:110, dur:1.1}); G.fromTo(b, {scale:.94}, {scale:1, duration:.7, ease:'elastic.out(1,.4)'}); }
+    }); });
     // hint: flip the first card once, then back
     if(!reduce) whenVisible(box, function(){ if(box.dataset.h) return; box.dataset.h = 1; var f = $('.idm', box); setTimeout(function(){ f.classList.add('flip'); }, 600); setTimeout(function(){ f.classList.remove('flip'); }, 2400); }, null, .4);
     if(A) G.from($$('.idm', box), {y:50, rotation:function(){ return G.utils.random(-6,6); }, duration:.7, ease:'back.out(1.8)', stagger:.06, scrollTrigger:{trigger:box, start:'top 88%', once:true}});
